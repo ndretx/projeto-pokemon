@@ -15,7 +15,7 @@ export default function Pokemon(props:any){
         var response = await fetch(LocationUrl);
         var data = await response.json();
 
-        data.map(location => {
+        data.slice(0,2).map(location => {
             locations.push(new PokemonLocationEntity(location.location_area.name))
         })
         return locations;
@@ -29,11 +29,11 @@ export default function Pokemon(props:any){
                 var pokemonTypes: PokemonTypeEntity [] = [];
                 var pokemonLocations : PokemonLocationEntity [] = [];
 
-                data.abilities.map(pokemonAbility =>{
+                data.abilities.slice(0,2).map(pokemonAbility =>{
                     pokemonAbilities.push(new PokemonAbilityEntity(pokemonAbility.ability.name))
                 }) 
 
-                data.types.map(pokemonType =>{
+                data.types.slice(0,2).map(pokemonType =>{
                     pokemonTypes.push(new PokemonTypeEntity(pokemonType.type.name))
                 })
                 pokemonLocations= await getPokemonLocations(data.location_area_encounters);
@@ -56,7 +56,7 @@ export default function Pokemon(props:any){
                 <Container>
                     
                 <PokemonStyle color={getPokemonColorByType(pokemon.types[0].name)}>
-                    <Link to={`/pokemon-details/`}><img src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokemon.id}.png`} alt="" /></Link>
+                    <Link to={{pathname: '/pokemon-details/', search: `?pokemon=${JSON.stringify(pokemon)}`}}><img src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokemon.id}.png`} alt="" /></Link>
                     <span>{pokemon.name}</span>
                 </PokemonStyle>
                     

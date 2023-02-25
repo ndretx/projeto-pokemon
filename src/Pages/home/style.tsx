@@ -20,9 +20,9 @@ export const Container = styled.div`
 export const PokemonList = styled.ul`
     list-style: none;
     display: grid;
-    grid-template-columns:repeat(auto-fit, minmax(400px,1fr));
+    grid-template-columns:repeat(auto-fit, minmax(500px,1fr));
     column-gap: 2rem;
-    row-gap:2rem;
+    row-gap: 2rem;
 
 `
 
