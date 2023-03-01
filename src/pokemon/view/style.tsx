@@ -5,10 +5,31 @@ interface Props {
 }
 
 export const Container = styled.div`
+<<<<<<< HEAD:src/pokemon/view/style.tsx
     h1{
         text-align: center;
         margin: 4rem;
     }
+=======
+    background-color: #E8E8E8;
+    
+
+    h1,h3{
+    text-align: center;
+    margin: 4rem;
+
+    
+}
+
+`
+export const PokemonList = styled.ul`
+    list-style: none;
+    display: grid;
+    grid-template-columns:repeat(auto-fit, minmax(500px,1fr));
+    column-gap: 2rem;
+    row-gap: 2rem;
+
+>>>>>>> 4479a6c8237dc9baa634e717e708631623e4b836:src/Pages/home/style.tsx
 `
 
 export const PokemonStyle = styled.div<Props>`
