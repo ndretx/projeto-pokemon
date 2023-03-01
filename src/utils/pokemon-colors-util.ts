@@ -1,4 +1,4 @@
-const colours =[ 
+const colours = [
 	{type: 'normal', color: '#A8A77A'},
 	{type: 'fire', color: '#EE8130'},
 	{type: 'water', color: '#6390F0'},
@@ -19,14 +19,12 @@ const colours =[
 	{type: 'fairy', color: '#D685AD'}
 ];
 
-
 export function getPokemonColorByType(type: string): string{
-    var colorByType ="";
-        colours.map (color => {
-            if(type == color.type){
-                colorByType = color.color
-            }
-        });
-        return colorByType;
-
+    var colorByType = '';
+    colours.map(color => {
+        if(color.type == type) {
+            colorByType = color.color;
+        }
+    });  
+    return colorByType;
 }
